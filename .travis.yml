@@ -16,6 +16,7 @@ before_script:
  - node --version 
  - npm --version 
  - node_modules/.bin/newman --version 
+ - python --version 
  - python app.py
 script:
  - node_modules/.bin/newman run ./usr_.postman_collection.json -e ./usr_.postman_environment.json 

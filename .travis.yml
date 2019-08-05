@@ -1,21 +1,21 @@
-language:
- - node_js
- - python
-node_js: 
- - "8.2.1"
-python:
+language: python
+python: 
  - "3.6"
  - "nightly"
 install:
- - npm install newman
  - "pip install pytest"
  - "pip install -r requirements.txt"
-before_script:
- - node --version 
- - npm --version 
- - node_modules/.bin/newman --version 
- - python --version 
- - python app.py
-script:
- - python -m pytest tests/
- - node_modules/.bin/newman run ./usr_.postman_collection.json -e ./usr_.postman_environment.json 
+script: python -m pytest tests/
+
+# language:
+#  - node_js
+# node_js: 
+#  - "8.2.1"
+# install:
+#  - npm install newman
+# before_script:
+#  - node --version 
+#  - npm --version 
+#  - node_modules/.bin/newman --version 
+# script:
+#  - node_modules/.bin/newman run ./usr_.postman_collection.json -e ./usr_.postman_environment.json 
